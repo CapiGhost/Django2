@@ -1,0 +1,52 @@
+{% extends "inicio/encabezado.html" %}
+
+{% block contenido %}
+<div class="page-content bg-dark text-success p-4 rounded border border-success">
+
+    <!-- Título de la página -->
+    <div class="page-header mb-4">
+        <div class="page-title">
+            <h3 class="text-success">
+                <small>Listado de Cursos</small>
+            </h3>
+        </div>
+    </div>
+    <!-- Fin título -->
+
+    <table class="table table-dark table-striped table-bordered border-success text-success">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Duración</th>
+                <th>Precio</th>
+                <th>Categoría</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for curso in cursos %}
+                <tr>
+                    <td class="text-center">
+                        {% if curso.imagen %}
+                            <img src="{{ curso.imagen.url }}" alt="{{ curso.nombre }}" style="max-width: 100px;">
+                        {% else %}
+                            No disponible
+                        {% endif %}
+                    </td>
+                    <td>{{ curso.nombre }}</td>
+                    <td>{{ curso.descripcion|default:"Sin descripción" }}</td>
+                    <td>{{ curso.duracion_horas }}</td>
+                    <td>${{ curso.precio }}</td>
+                    <td>{{ curso.categoria }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="6" class="text-center">Actualmente no hay cursos registrados.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

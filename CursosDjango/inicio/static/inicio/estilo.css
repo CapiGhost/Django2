@@ -1,0 +1,53 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.page-header h3 {
+    margin-top: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.table thead th {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+}
+
+.table tbody td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.img-media {
+    max-width: 80px;
+    border-radius: 8px;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-weight: 500;
+}
+
+.sidebar {
+    background-color: #343a40;
+    min-height: 100vh;
+    padding-top: 1rem;
+}
+
+.sidebar .navigation li a {
+    color: #ffffff;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.sidebar .navigation li a:hover {
+    background-color: #495057;
+    border-radius: 4px;
+}
+
+.page-content {
+    padding: 2rem;
+}

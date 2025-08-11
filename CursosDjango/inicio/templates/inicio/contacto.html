@@ -1,0 +1,39 @@
+{% extends "inicio/encabezado.html" %}
+
+{% block titulo %}Contacto{% endblock %}
+
+{% block contenido %}
+<h1 class="text-success">Formulario para solicitar información</h1>
+
+<form class="bg-dark text-success p-4 rounded border border-success">
+    
+    <div class="mb-3">
+        <label class="form-label">Nombre:</label>
+        <input type="text" class="form-control bg-secondary text-light border-success" name="nombre">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Correo electrónico:</label>
+        <input type="email" class="form-control bg-secondary text-light border-success" name="correo">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Cursos:</label>
+        <select class="form-select bg-secondary text-light border-success" name="cursos">
+            {% for curso in cursos %}
+                <option value="{{ curso.id }}">{{ curso.nombre }}</option>
+            {% empty %}
+                <option>No hay cursos disponibles</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Comentarios:</label>
+        <textarea class="form-control bg-secondary text-light border-success" rows="4"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success fw-bold">Enviar</button>
+
+</form>
+{% endblock %}
